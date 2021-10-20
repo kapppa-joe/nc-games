@@ -7,9 +7,13 @@ const Nav = () => {
     <nav id="nav-bar">
       <ul>
         <li>
-          <Link to="/reviews?sort_by=created_at">Recent Reviews</Link>
+          <Link to="/reviews?sort_by=created_at">Latest Reviews</Link>
         </li>
-        <li>My Reviews</li>
+        |
+        <li>
+          <Link to="/random">Random</Link>
+        </li>
+        |
         <li>
           <Link to="/categories">Categories</Link>
         </li>

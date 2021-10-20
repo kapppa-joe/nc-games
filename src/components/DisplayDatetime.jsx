@@ -1,7 +1,8 @@
 import React from "react";
+import moment from "moment";
 
 const DisplayDatetime = ({ value }) => {
-  return <>{new Date(value).toLocaleString("en-GB")}</>;
+  return <>{moment(value).fromNow()}</>;
 };
 
 export default DisplayDatetime;

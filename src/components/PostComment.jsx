@@ -10,13 +10,13 @@ const PostComment = ({ setNewlyPostedComment, postNewComment, review_id }) => {
     if (!user) return;
 
     setNewlyPostedComment({
-      author: user,
+      author: user.username,
       body: commentBody,
       votes: 0,
       created_at: new Date().toISOString(),
     });
     setCommentBody("");
-    postNewComment(review_id, user, commentBody).catch((err) => {
+    postNewComment(review_id, user.username, commentBody).catch((err) => {
       console.dir(err);
       setNewlyPostedComment(null);
       // tell user some error happened

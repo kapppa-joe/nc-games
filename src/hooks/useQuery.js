@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 
 const useQuery = () => {
-  const [query, setQuery] = useState(null);
   let location = useLocation();
+  const [query, setQuery] = useState(new URLSearchParams(location.search));
   useEffect(() => {
     setQuery(new URLSearchParams(location.search));
   }, [location]);

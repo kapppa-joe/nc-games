@@ -1,0 +1,47 @@
+.reviews-container {
+  margin: auto;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.review {
+  display: flex;
+  text-align: left;
+
+  border: 0.5px solid var(--light-shadow);
+  border-collapse: collapse;
+  padding: 0 1em;
+
+  transition: border 0.3s ease-in, translate 0.3s ease-in;
+}
+
+.review h3 {
+  transition: all 0.2s ease-in;
+  border-bottom: 1px solid transparent;
+}
+.reviews-container .review:hover {
+  border: 0.5px solid var(--primary);
+  box-shadow: 1px 1px 5px var(--primary-translucent-shadow);
+  translate: -2px -1px;
+}
+
+.review img {
+  max-width: 100%;
+}
+
+.review p {
+  color: var(--shadow);
+  font-size: 80%;
+  margin: 0.5em;
+}
+
+/* 
+.review .image-wrapper {
+  float: right;
+  order: -1;
+}
+.review img {
+  max-width: 30vw;
+} */

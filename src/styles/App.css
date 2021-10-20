@@ -1,21 +1,31 @@
-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+html {
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
 }
 
 .App {
   text-align: center;
   height: 100vh;
+  font-size: calc(12px + 1vmin);
 
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
 
-  --background: #f0f0f0;
-  --foreground: #333;
+  --background: #f4f4f4;
+  --foreground: #282c34;
+  --container-background: #fff;
   --primary: #597eff;
   --shadow: #777;
   --light-shadow: #ccc;
+  --translucent-shadow: #00000015;
+  --primary-translucent-shadow: #597eff40;
+
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 .App > section {
@@ -38,17 +48,6 @@ input {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -84,8 +83,10 @@ section .card {
   height: 8rem;
   width: 80vw;
   border-radius: 0.5rem;
-  background-color: #eee;
-  box-shadow: 2px 2px 5px 2px #ccc;
+  background-color: var(--container-background);
+  border: solid 0.5px var(--shadow);
+  box-shadow: 0 0 1.5em 0 var(--translucent-shadow);
+  transition: box-shadow 0.1s ease-in-out;
 
   display: flex;
   align-items: center;
@@ -93,7 +94,23 @@ section .card {
   text-align: center;
 }
 
+section .card:hover {
+  box-shadow: 0 0 1.5em 0 var(--primary-translucent-shadow);
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
+}
+
+div.msgbox {
+  position: relative;
+  top: 20vh;
+  width: 80vw;
+  margin: auto;
+  padding: 2em;
+  border: solid 0.5px var(--shadow);
+  box-shadow: 0 0 1.5em 0 var(--translucent-shadow);
+  border-radius: 0.5em;
+  background-color: var(--container-background);
 }

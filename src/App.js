@@ -11,6 +11,8 @@ import ListReviews from "./pages/ListReviews";
 import SingleReview from "./pages/SingleReview";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
+import Random from "./pages/Random";
 
 function App() {
   return (
@@ -28,11 +30,17 @@ function App() {
           <Route name="reviews" exact path="/reviews">
             <ListReviews />
           </Route>
-          <Route name="review" exact path="/reviews/:review_id">
+          <Route name="read a review" exact path="/reviews/:review_id">
             <SingleReview />
+          </Route>
+          <Route name="random" exact path="/random">
+            <Random />
           </Route>
           <Route name="login" exact path="/login">
             <Login />
+          </Route>
+          <Route name="logout" exact path="/logout">
+            <Logout />
           </Route>
           <Route default name="404 not found">
             <NotFound />

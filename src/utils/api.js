@@ -38,3 +38,7 @@ export function postNewComment(review_id, username, comment_body) {
     })
     .then((res) => res.data.comment);
 }
+
+export function getUserByUsername(username) {
+  return api.get(`/users/${username}`).then((res) => res.data.user);
+}

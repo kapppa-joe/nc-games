@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
+import useUser from "../hooks/useUser";
+
 import { ReactComponent as LogoSvg } from "../assets/svg/logo.svg";
 import "../styles/SearchBar.css";
 
@@ -12,6 +14,8 @@ const SearchBar = () => {
     e.preventDefault();
     history.push(`/reviews?search=${searchTerm}`);
   };
+
+  const { user } = useUser();
 
   return (
     <nav id="search-bar">
@@ -29,11 +33,19 @@ const SearchBar = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
-      <Link to="/login">
-        <span id="login-icon" role="button">
-          UserIcon
-        </span>
-      </Link>
+      {user ? (
+        <Link to="/logout">
+          <span id="user-icon" role="button">
+            Logout
+          </span>
+        </Link>
+      ) : (
+        <Link to="/login">
+          <span id="login-icon" role="button">
+            Login
+          </span>
+        </Link>
+      )}
     </nav>
   );
 };

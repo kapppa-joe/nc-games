@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 
 import useQuery from "../hooks/useQuery";
 import useApiCall from "../hooks/useApiCall";
@@ -12,7 +13,8 @@ import {
   sortOptionsNames,
   setSortOptionToQueryStr,
 } from "../utils/sortOptions";
-import { useHistory } from "react-router";
+
+import "../styles/Reviews.css";
 
 const ListReviews = () => {
   const query = useQuery();
@@ -30,11 +32,7 @@ const ListReviews = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (!query) {
-      return;
-    }
     const newQueryStr = setSortOptionToQueryStr(query, sortOptionSelected);
-    console.log(newQueryStr, "<-- new query");
     history.push({ search: newQueryStr });
   }, [sortOptionSelected]);
 
