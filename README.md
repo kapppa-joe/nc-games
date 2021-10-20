@@ -1,3 +1,12 @@
+# NC-BoardGamers
+
+## Credit:
+
+Awesome loading spinner from:
+https://loading.io/spinner/bars/-bounce-bar-column-chart-equalizer-histogram-rectangle-block-progress-facebook
+
+<!-- below: default readme to remove later -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

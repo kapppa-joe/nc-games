@@ -1,0 +1,19 @@
+.loader {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader svg {
+  position: relative;
+  bottom: 6em;
+  width: min(50vw, 50vh);
+  height: min(50vw, 50vh);
+  --background: var(--background);
+  --svg-colour-1: #d4d4d4;
+  --svg-colour-2: #aaf;
+  --svg-colour-3: #acf;
+  --svg-colour-4: #eee;
+}

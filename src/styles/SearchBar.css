@@ -1,0 +1,36 @@
+#search-bar {
+  flex-shrink: 0;
+  order: -1;
+
+  width: 100vw;
+  height: 3em;
+  z-index: 2;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1em;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 1em;
+
+  background: var(--primary);
+  color: var(--background);
+}
+
+#search-bar > * {
+  flex-shrink: 1;
+}
+
+#search-bar input[type="text"] {
+  background-color: var(--light-shadow);
+  color: #00f;
+  width: 100%;
+}
+
+#search-bar form {
+  flex: 1 1 5em;
+}
+
+#search-bar svg {
+  --logo-svg-colour: #f0f0f0;
+}
