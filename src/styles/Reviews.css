@@ -1,6 +1,6 @@
 .reviews-container {
   margin: auto;
-  max-width: 80vw;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   gap: 1em;

@@ -24,7 +24,7 @@ const Categories = () => {
                 <Link
                   key={category.slug}
                   to={`/reviews?category=${category.slug}`}
-                  className="pure-u-1 pure-u-lg-1-4"
+                  className="pure-u-1 pure-u-lg-1-3 pure-u-xl-1-4"
                 >
                   <div className="card category" key={category.slug}>
                     <h3>{category.slug}</h3>

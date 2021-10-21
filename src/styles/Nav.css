@@ -42,7 +42,8 @@
   color: var(--background);
 }
 
-#nav-bar a:hover {
+#nav-bar a:hover,
+#nav-bar a:focus {
   background: var(--primary);
 }
 

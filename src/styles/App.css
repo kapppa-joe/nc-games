@@ -51,30 +51,6 @@ body {
   flex-basis: 3em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 ul {
   padding: 0;
   margin: 0;
@@ -82,18 +58,21 @@ ul {
 }
 
 section .card-container {
+  width: 100%;
   min-height: 100%;
   display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: space-evenly;
   gap: 2rem;
   padding: 2rem;
+  align-items: stretch;
+  justify-content: space-evenly;
 }
 
 section .card {
-  height: 8rem;
-  width: 80vw;
+  /* height: 8rem; */
+  /* width: 80vw; */
+  height: 100%;
+  min-height: 5em;
+  margin: 1em 0;
   border-radius: 0.5rem;
   background-color: var(--container-background);
   border: solid 0.5px var(--shadow);
@@ -120,7 +99,7 @@ a {
 div.msgbox {
   position: relative;
   top: 20vh;
-  width: 80vw;
+  width: 80%;
   margin: auto;
   padding: 2em;
   border: solid 0.5px var(--shadow);
