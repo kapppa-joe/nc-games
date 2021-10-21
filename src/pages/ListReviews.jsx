@@ -48,7 +48,13 @@ const ListReviews = () => {
             <h2>Total results: {total_count}</h2>
             {reviews.map((review) => {
               // console.log(review);
-              return <Review key={review.review_id} review={review} />;
+              return (
+                <Review
+                  key={review.review_id}
+                  review={review}
+                  generateLink={true}
+                />
+              );
             })}
           </div>
         </section>

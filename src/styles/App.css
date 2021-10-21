@@ -29,9 +29,20 @@ body {
   color: var(--foreground);
 }
 
+@media only screen and (min-width: 48em) {
+  .App {
+    display: grid;
+    grid-template-rows: 3em auto;
+    grid-template-columns: 15em auto;
+    grid-template-areas: "search-bar search-bar" "nav-bar main";
+  }
+  .App > section#main {
+    grid-area: main;
+    height: auto;
+  }
+}
+
 .App > section {
-  /* padding-top: 2em; */
-  /* padding-bottom: 2em; */
   flex-grow: 1;
   overflow-y: scroll;
 }

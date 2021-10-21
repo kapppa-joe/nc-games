@@ -12,10 +12,10 @@ const Voter = ({ votes, patchVotes }) => {
 
   return (
     <div>
+      <span className="info">{votes + voteChange}</span> vote(s)
       <button onClick={() => handleVote(+1)} disabled={voteChange === 1}>
         +
       </button>
-      {votes + voteChange}
       <button onClick={() => handleVote(-1)} disabled={voteChange === -1}>
         -
       </button>

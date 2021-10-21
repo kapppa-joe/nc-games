@@ -2,6 +2,8 @@
   flex-shrink: 0;
   order: -1;
 
+  grid-area: search-bar;
+
   width: 100vw;
   height: 3em;
   z-index: 2;

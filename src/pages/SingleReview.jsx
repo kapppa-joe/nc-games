@@ -18,10 +18,10 @@ const SingleReview = () => {
   return (
     <ApiLoading isLoading={isLoading} err={err}>
       {review && (
-        <>
-          <Review review={review} />
+        <div class="single-review-wrapper">
+          <Review review={review} isSingleReview={true} />
           <ListComments review_id={review.review_id} />
-        </>
+        </div>
       )}
     </ApiLoading>
   );

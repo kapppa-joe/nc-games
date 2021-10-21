@@ -30,6 +30,12 @@ export function patchCommentVotes(comment_id, inc_votes) {
     .then((res) => res.data.comment);
 }
 
+export function patchReviewVotes(review_id, inc_votes) {
+  return api
+    .patch(`/reviews/${review_id}`, { inc_votes })
+    .then((res) => res.data.review);
+}
+
 export function postNewComment(review_id, username, comment_body) {
   return api
     .post(`/reviews/${review_id}/comments`, {
