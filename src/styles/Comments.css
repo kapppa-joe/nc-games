@@ -1,10 +1,13 @@
 div.comments-wrapper {
-  max-width: 80vw;
+  /* max-width: 80vw; */
   text-align: justify;
 }
 
+#post-comment-form button {
+  margin-right: 1em;
+}
+
 .comment {
-  /* max-width: 70vw; */
   border-collapse: collapse;
   border-top: 0.5px solid var(--shadow);
   padding: 1em 0.5em;
@@ -14,7 +17,7 @@ div.comments-wrapper {
 }
 
 .comment p {
-  font-size: 80%;
+  font-size: 90%;
   color: var(--shadow);
   word-break: break-all;
 }
@@ -30,7 +33,7 @@ p.comment-body {
 }
 
 .comment .voter {
-  font-size: 80%;
+  font-size: 90%;
   gap: 0;
 }
 
@@ -38,8 +41,9 @@ p.comment-body {
   margin: 0.2em;
 }
 
-/* 
-
-  max-width: 50vw;
-  margin-left: 2em;
-*/
+@media only screen and (min-width: 48em) {
+  div.comments-wrapper {
+    max-width: 50vw;
+    margin: auto;
+  }
+}

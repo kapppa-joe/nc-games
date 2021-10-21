@@ -28,7 +28,10 @@ const ListComments = ({ review_id }) => {
           <p>No comments for this review yet. Maybe you can post one?</p>
         )}
         {newlyPostedComment ? (
-          <SingleComment comment={newlyPostedComment} />
+          <>
+            <p>Thank you for posting you comment!</p>
+            <SingleComment comment={newlyPostedComment} />
+          </>
         ) : (
           <PostComment
             setNewlyPostedComment={setNewlyPostedComment}

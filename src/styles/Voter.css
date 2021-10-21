@@ -13,7 +13,6 @@ button.vote-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0.5em; */
   height: 2em;
   width: 2em;
 }
@@ -22,4 +21,12 @@ button.vote-button svg {
   margin: 0em;
   width: 1em;
   height: 1em;
+}
+
+button.vote-button:not(:hover, :focus) svg {
+  color: var(--shadow);
+}
+
+button.vote-button svg * {
+  color: inherit;
 }

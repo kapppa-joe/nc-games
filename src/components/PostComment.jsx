@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import useUser from "../hooks/useUser";
 
 const PostComment = ({ setNewlyPostedComment, postNewComment, review_id }) => {
@@ -26,12 +27,14 @@ const PostComment = ({ setNewlyPostedComment, postNewComment, review_id }) => {
   if (!user) {
     return (
       <div class="msgbox" id="prompt-login">
-        Login or sign up to leave your comment
+        <p>
+          <Link to="/login">Login</Link> to leave your comment
+        </p>
       </div>
     );
   } else {
     return (
-      <form onSubmit={handleSubmit}>
+      <form id="post-comment-form" onSubmit={handleSubmit}>
         <textarea
           className="text-input input-comment"
           name="comment body"
@@ -42,15 +45,15 @@ const PostComment = ({ setNewlyPostedComment, postNewComment, review_id }) => {
           rows="3"
           required
         />
+        <button type="submit" className="button primary">
+          Submit
+        </button>
         <button
           type="reset"
           className="button"
           onClick={() => setCommentBody("")}
         >
           Discard
-        </button>
-        <button type="submit" className="button">
-          Submit
         </button>
       </form>
     );

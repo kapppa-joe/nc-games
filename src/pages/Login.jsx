@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import useUser from "../hooks/useUser";
+import "../styles/Login.css";
 
 const Login = () => {
   const history = useHistory();
@@ -10,6 +11,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErr(null);
     login(usernameValue)
       .then(() => {
         console.log("logged in successfuly. redirecting user soon.");
@@ -20,7 +22,7 @@ const Login = () => {
       .catch((err) => {
         if (err.response && err.response.status === 404) {
           setErr(
-            "Oops, seems that we haven't got a user with that username. Maybe check that you spelt correctly?"
+            "Oops, seems that we haven't got a user with that username. Maybe check that you have spelt it correctly?"
           );
         } else {
           setErr(
@@ -41,21 +43,25 @@ const Login = () => {
     );
   } else {
     return (
-      <div className="msgbox">
-        <em>You are not logged in yet.</em>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="login">Username:</label>
-          <input
-            type="text"
-            name="text"
-            id="username"
-            value={usernameValue}
-            placeholder="Guest? try: grumpy19"
-            onChange={(e) => setUsernameValue(e.target.value)}
-          />
-          <button class="button">log me in!</button>
+      <div className="msgbox login-page">
+        <h2>Log in</h2>
+        <form id="login-form" onSubmit={handleSubmit}>
+          <span>
+            <label htmlFor="login">Username: </label>
+            <input
+              type="text"
+              name="text"
+              id="username"
+              className={`text-input ${err && "error"}`}
+              value={usernameValue}
+              placeholder="Guest? try: grumpy19"
+              onChange={(e) => setUsernameValue(e.target.value)}
+              required
+            />
+          </span>
+          <button class="button">Log me in!</button>
+          {err && <span class="error-msg">{err}</span>}
         </form>
-        {err && <span class="error-msg">{err}</span>}
       </div>
     );
   }

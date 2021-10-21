@@ -95,7 +95,8 @@ section .card:active {
 }
 
 a {
-  color: var(--primary-dark);
+  color: var(--foreground);
+  font-weight: 600;
   text-decoration: inherit;
 }
 
@@ -113,6 +114,7 @@ a:disabled {
   color: var(--foreground);
   padding: 0.5em;
   border: 0.5px solid var(--light-shadow);
+  border-radius: 0.2em;
   box-shadow: 1px 1px 5px var(--translucent-shadow);
   transition: 0.2s ease;
 }
@@ -139,11 +141,24 @@ a:disabled {
   cursor: not-allowed;
 }
 
+.button.primary {
+  border: 0.5px solid var(--primary);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.button.primary:hover,
+.button.primary:focus {
+  color: var(--background);
+  box-shadow: 0px 0px 2px var(--highlight);
+}
+
 div.msgbox {
   position: relative;
-  top: 20vh;
+  top: 15%;
   width: 80%;
   margin: auto;
+  margin-bottom: 1em;
   padding: 2em;
 
   display: flex;
@@ -176,7 +191,7 @@ div.msgbox p {
 }
 
 .text-input {
-  background-color: var(--translucent-shadow);
+  background-color: var(--container-background);
   color: var(--foreground);
   padding: 0.5em 0.6em;
 

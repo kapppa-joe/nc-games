@@ -46,8 +46,9 @@
   color: var(--background);
 }
 
-#search-term:focus {
-  outline: 0.5px solid var(--highlight);
+#search-term:focus,
+#search-term:hover {
+  outline: 1px double var(--background);
   box-shadow: inset 0 1px 2px var(--highlight), 0px 0px 3px 2px var(--highlight);
 }
 
@@ -67,6 +68,21 @@ a:focus .user-button svg {
   color: var(--primary);
   background: var(--background);
   box-shadow: 0px 0px 10px var(--light-shadow);
+  outline: 1.5px solid var(--light-shadow);
+}
+
+.login-button {
+  background-color: var(--primary);
+  color: var(--background);
+  border: 1px solid var(--background);
+  font-weight: 600;
+}
+
+.login-button:focus,
+.login-button:hover {
+  background-color: var(--background);
+  color: var(--primary);
+  outline: 3px double var(--light-shadow);
 }
 
 @media only screen and (min-width: 48em) {

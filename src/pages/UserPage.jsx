@@ -7,7 +7,9 @@ const UserPage = () => {
   if (user) {
     return (
       <div class="msgbox">
-        <p>You are now logged in as: {user.username}</p>
+        <p>
+          You are now logged in as: <b>{user.username}</b>
+        </p>
         <p>Name: {user.name}</p>
         {console.log(user)}
         <img
