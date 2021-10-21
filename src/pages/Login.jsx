@@ -50,7 +50,7 @@ const Login = () => {
             name="text"
             id="username"
             value={usernameValue}
-            placeholder="Guest? try: tickle122"
+            placeholder="Guest? try: grumpy19"
             onChange={(e) => setUsernameValue(e.target.value)}
           />
           <button>Go!</button>

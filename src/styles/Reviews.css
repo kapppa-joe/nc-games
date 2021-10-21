@@ -15,12 +15,13 @@
   padding: 1em;
   background: var(--container-background);
 
-  transition: border 0.3s ease-in, box-shadow 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .review h3 {
   transition: all 0.2s ease-in;
   border-bottom: 1px solid transparent;
+  color: var(--foreground);
 }
 
 .reviews-container .review:hover,
@@ -28,6 +29,7 @@
   border: 0.5px solid var(--primary);
   box-shadow: 1px 1px 5px var(--primary-translucent-shadow),
     2px 1px 5px var(--light-shadow);
+  filter: saturate(1.5) brightness(1.1);
 }
 
 .review img {
@@ -79,10 +81,13 @@
 
   .single-review-wrapper .review {
     padding: 2em;
+    max-width: 40vw;
+    margin-top: 1em;
   }
 }
 
 .single-review-wrapper .review-details p.review-body {
   font-size: 1em;
   color: var(--foreground);
+  line-height: 1.5;
 }

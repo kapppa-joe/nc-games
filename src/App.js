@@ -11,7 +11,7 @@ import ListReviews from "./pages/ListReviews";
 import SingleReview from "./pages/SingleReview";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
-import Logout from "./pages/Logout";
+import UserPage from "./pages/UserPage";
 import Random from "./pages/Random";
 
 function App() {
@@ -39,8 +39,8 @@ function App() {
           <Route name="login" exact path="/login">
             <Login />
           </Route>
-          <Route name="logout" exact path="/logout">
-            <Logout />
+          <Route name="user page" exact path="/user">
+            <UserPage />
           </Route>
           <Route default name="404 not found">
             <NotFound />

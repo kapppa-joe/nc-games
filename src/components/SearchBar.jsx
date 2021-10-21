@@ -3,7 +3,8 @@ import { Link, useHistory } from "react-router-dom";
 
 import useUser from "../hooks/useUser";
 
-import { ReactComponent as LogoSvg } from "../assets/svg/logo.svg";
+import { ReactComponent as SiteLogo } from "../assets/svg/logo.svg";
+import { ReactComponent as UserIcon } from "../assets/svg/user.svg";
 import "../styles/SearchBar.css";
 
 const SearchBar = () => {
@@ -19,8 +20,8 @@ const SearchBar = () => {
 
   return (
     <nav id="search-bar">
-      <Link to="/">
-        <LogoSvg />
+      <Link to="/" role="button" aria-label="back to home">
+        <SiteLogo />
       </Link>
       <form className="search-form" role="search" onSubmit={handleSubmit}>
         <input
@@ -34,16 +35,16 @@ const SearchBar = () => {
         />
       </form>
       {user ? (
-        <Link to="/logout">
-          <span id="user-icon" role="button">
-            Logout
+        <Link to="/user" tabIndex="0">
+          <span className="user-button" aria-label="user-page">
+            <UserIcon />
           </span>
         </Link>
       ) : (
         <Link to="/login">
-          <span id="login-icon" role="button">
+          <button className="button login-button" aria-label="login">
             Login
-          </span>
+          </button>
         </Link>
       )}
     </nav>
