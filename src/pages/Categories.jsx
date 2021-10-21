@@ -5,6 +5,8 @@ import { getAllCategories } from "../utils/api";
 import useApiCall from "../hooks/useApiCall";
 import ApiLoading from "../components/ApiLoading";
 
+import "../styles/Categories.css";
+
 const Categories = () => {
   const {
     data: categories,
@@ -23,8 +25,9 @@ const Categories = () => {
                   key={category.slug}
                   to={`/reviews?category=${category.slug}`}
                 >
-                  <div className="card" key={category.slug}>
-                    {category.slug}
+                  <div className="card category" key={category.slug}>
+                    <h3>{category.slug}</h3>
+                    <small>{category.description}</small>
                   </div>
                 </Link>
               );

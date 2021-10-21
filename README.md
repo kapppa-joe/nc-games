@@ -5,6 +5,9 @@
 Awesome loading spinner from:
 https://loading.io/spinner/bars/-bounce-bar-column-chart-equalizer-histogram-rectangle-block-progress-facebook
 
+Elegant <select> styling from:
+https://codepen.io/avstorm/pen/bPOgRO
+
 <!-- below: default readme to remove later -->
 
 # Getting Started with Create React App

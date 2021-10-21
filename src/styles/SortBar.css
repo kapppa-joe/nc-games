@@ -1,0 +1,76 @@
+.sort-bar-wrapper {
+  margin: 1em;
+}
+
+.select {
+  position: relative;
+  max-width: 60vw;
+}
+
+.select:focus svg {
+  rotate: 180deg;
+}
+.select svg {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 6px;
+  stroke-width: 2px;
+  stroke: var(--shadow);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.select select {
+  -webkit-appearance: none;
+  padding: 7px 40px 7px 12px;
+  width: fit-content;
+  border: 1px solid var(--light-shadow);
+  border-radius: 5px;
+  background: var(--container-background);
+  box-shadow: 0 1px 3px -2px var(--light-shadow);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.select select:required:invalid {
+  color: var(--shadow);
+}
+.select select option {
+  color: var(--light-shadow);
+}
+.select select option[value=""][disabled] {
+  display: none;
+}
+
+.select select:hover {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-translucent-shadow);
+}
+
+.select select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-translucent-shadow);
+}
+
+.select select:focus + svg {
+  stroke: var(--primary);
+  rotate: 90deg;
+}
+
+.select select:hover + svg {
+  stroke: var(--primary);
+  rotate: 90deg;
+}
+.sprites {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}

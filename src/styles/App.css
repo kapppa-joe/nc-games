@@ -21,6 +21,7 @@ body {
   --primary: #597eff;
   --shadow: #777;
   --light-shadow: #ccc;
+  --highlight: #ccccff66;
   --translucent-shadow: #00000015;
   --primary-translucent-shadow: #597eff40;
 
@@ -86,7 +87,7 @@ section .card {
   background-color: var(--container-background);
   border: solid 0.5px var(--shadow);
   box-shadow: 0 0 1.5em 0 var(--translucent-shadow);
-  transition: box-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out, translate 0.2s ease;
 
   display: flex;
   align-items: center;
@@ -94,8 +95,10 @@ section .card {
   text-align: center;
 }
 
-section .card:hover {
+section .card:hover,
+section .card:active {
   box-shadow: 0 0 1.5em 0 var(--primary-translucent-shadow);
+  translate: -1px -2px;
 }
 
 a {

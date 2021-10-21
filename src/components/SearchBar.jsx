@@ -22,12 +22,12 @@ const SearchBar = () => {
       <Link to="/">
         <LogoSvg />
       </Link>
-      <form className="search-box" role="search" onSubmit={handleSubmit}>
+      <form className="search-form" role="search" onSubmit={handleSubmit}>
         <input
           type="text"
           name="search-term"
           id="search-term"
-          placeholder="Search NCGamers"
+          placeholder="Search all reviews"
           value={searchTerm}
           aria-label="search-term"
           onChange={(e) => setSearchTerm(e.target.value)}

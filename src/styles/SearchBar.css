@@ -21,16 +21,30 @@
   flex-shrink: 1;
 }
 
-#search-bar input[type="text"] {
-  background-color: var(--light-shadow);
-  color: #00f;
-  width: 100%;
-}
-
 #search-bar form {
   flex: 1 1 5em;
 }
 
 #search-bar svg {
   --logo-svg-colour: #f0f0f0;
+}
+
+#search-term {
+  background-color: var(--translucent-shadow);
+  width: 100%;
+  padding: 0.5em 0.6em;
+
+  border: 0.5px solid var(--light-shadow);
+  border-radius: 4px;
+  color: var(--background);
+  transition: box-shadow 0.1s ease;
+}
+
+#search-term::placeholder {
+  color: var(--background);
+}
+
+#search-term:focus {
+  outline: 0.5px solid var(--highlight);
+  box-shadow: inset 0 1px 2px var(--highlight), 0px 0px 3px 2px var(--highlight);
 }

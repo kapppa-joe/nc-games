@@ -16,7 +16,7 @@ const Home = () => {
         </span>
       )}
       <div className="card-container">
-        <Link to="/reviews?sort_by=created_at&limit=5">
+        <Link to={`/reviews?sort_by=created_at&limit=5`}>
           <div className="card">Read some latest game reviews</div>
         </Link>
         {user && (
