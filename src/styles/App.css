@@ -26,6 +26,8 @@ body {
   --translucent-shadow: #00000015;
   --primary-translucent-shadow: #597eff40;
 
+  --error: #f01438;
+
   background-color: var(--background);
   color: var(--foreground);
 }
@@ -143,12 +145,32 @@ div.msgbox {
   width: 80%;
   margin: auto;
   padding: 2em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+
   border: solid 0.5px var(--shadow);
   box-shadow: 0 0 1.5em 0 var(--translucent-shadow);
   border-radius: 0.5em;
   background-color: var(--container-background);
 }
 
+div.msgbox p {
+  line-height: 1.5;
+}
+
 .primary {
   color: var(--primary);
+}
+
+.error-msg {
+  color: var(--error);
+}
+
+@media only screen and (min-width: 48em) {
+  .msgbox {
+    max-width: 50vw;
+  }
 }

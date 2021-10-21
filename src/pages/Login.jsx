@@ -32,7 +32,7 @@ const Login = () => {
 
   if (user) {
     return (
-      <div>
+      <div className="msgbox">
         <p>Welcome back, {user.name}!</p>
         <p>
           Will redirect you to the <Link to="/">home page</Link> very soon...
@@ -41,8 +41,8 @@ const Login = () => {
     );
   } else {
     return (
-      <div>
-        You are not logged in yet.
+      <div className="msgbox">
+        <em>You are not logged in yet.</em>
         <form onSubmit={handleSubmit}>
           <label htmlFor="login">Username:</label>
           <input
@@ -53,7 +53,7 @@ const Login = () => {
             placeholder="Guest? try: grumpy19"
             onChange={(e) => setUsernameValue(e.target.value)}
           />
-          <button>Go!</button>
+          <button class="button">log me in!</button>
         </form>
         {err && <span class="error-msg">{err}</span>}
       </div>
