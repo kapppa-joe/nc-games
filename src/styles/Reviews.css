@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
+  padding-bottom: 1em;
 }
 
 .review {
@@ -42,15 +43,6 @@
   margin: 0.5em 0;
 }
 
-/* 
-.review .image-wrapper {
-  float: right;
-  order: -1;
-}
-.review img {
-  max-width: 30vw;
-} */
-
 .review-details p:not(.review-body) {
   white-space: nowrap;
 }
@@ -83,10 +75,26 @@
     padding: 2em;
     margin-top: 1em;
   }
+  .single-review-wrapper p.review-body {
+    margin-right: 2em;
+  }
 }
 
 .single-review-wrapper .review-details p.review-body {
   font-size: 1em;
   color: var(--foreground);
   line-height: 1.5;
+}
+
+.pagination-wrapper {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.pagination-wrapper button.current-page {
+  background-color: var(--primary);
+  color: var(--container-background);
+  box-shadow: 2px 2px 5px 3px var(--primary-translucent-shadow);
+  font-weight: 600;
 }
