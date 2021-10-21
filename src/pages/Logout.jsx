@@ -8,7 +8,9 @@ const Logout = () => {
     return (
       <div>
         <p>You are now logged in as: {user.username}</p>
-        <button onClick={logout}>Logout</button>
+        <button className="button logout-button" onClick={logout}>
+          Logout
+        </button>
       </div>
     );
   } else {

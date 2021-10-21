@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+import { ReactComponent as ArrowUp } from "../assets/svg/arrow-up.svg";
+import { ReactComponent as ArrowDown } from "../assets/svg/arrow-down.svg";
+
+import "../styles/Voter.css";
+
 const Voter = ({ votes, patchVotes }) => {
   const [voteChange, setVoteChange] = useState(0);
   const handleVote = (inc_votes) => {
@@ -11,13 +16,23 @@ const Voter = ({ votes, patchVotes }) => {
   };
 
   return (
-    <div>
-      <span className="info">{votes + voteChange}</span> vote(s)
-      <button onClick={() => handleVote(+1)} disabled={voteChange === 1}>
-        +
+    <div className="voter">
+      <button
+        className="button vote-button"
+        aria-label="vote-up"
+        onClick={() => handleVote(+1)}
+        disabled={voteChange === 1}
+      >
+        <ArrowUp />
       </button>
-      <button onClick={() => handleVote(-1)} disabled={voteChange === -1}>
-        -
+      <span className="info">{votes + voteChange} vote(s) </span>
+      <button
+        className="button vote-button"
+        aria-label="vote-down"
+        onClick={() => handleVote(-1)}
+        disabled={voteChange === -1}
+      >
+        <ArrowDown />
       </button>
     </div>
   );

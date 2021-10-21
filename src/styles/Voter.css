@@ -1,0 +1,25 @@
+div.voter {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  margin-right: 1em;
+}
+
+div.voter .info {
+  margin: 0 1em;
+}
+
+button.vote-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0.5em; */
+  height: 2em;
+  width: 2em;
+}
+
+button.vote-button svg {
+  margin: 0em;
+  width: 1em;
+  height: 1em;
+}

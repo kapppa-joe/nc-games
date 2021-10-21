@@ -96,6 +96,37 @@ a {
   text-decoration: inherit;
 }
 
+.button {
+  background: var(--container-background);
+  color: var(--foreground);
+  padding: 0.5em;
+  border: 0.5px solid var(--light-shadow);
+  box-shadow: 1px 1px 5px var(--translucent-shadow);
+  transition: 0.2s ease;
+}
+
+.button svg {
+  color: inherit;
+}
+.button svg path {
+  color: inherit;
+  fill: currentColor;
+}
+
+.button:hover,
+.button:focus {
+  background: var(--primary);
+  color: var(--background);
+  box-shadow: 2px 2px 5px 3px var(--primary-translucent-shadow);
+}
+
+.button:disabled {
+  background: var(--light-shadow);
+  color: var(--shadow);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 div.msgbox {
   position: relative;
   top: 20vh;
