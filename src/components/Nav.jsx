@@ -9,11 +9,11 @@ const Nav = () => {
         <li>
           <Link to="/reviews?sort_by=created_at">Latest Reviews</Link>
         </li>
-        |
+
         <li>
           <Link to="/random">Random</Link>
         </li>
-        |
+
         <li>
           <Link to="/categories">Categories</Link>
         </li>
