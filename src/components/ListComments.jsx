@@ -7,6 +7,8 @@ import ApiLoading from "./ApiLoading";
 import PostComment from "./PostComment";
 import SingleComment from "./SingleComment";
 
+import "../styles/Comments.css";
+
 const ListComments = ({ review_id }) => {
   const {
     data: comments,
@@ -14,14 +16,13 @@ const ListComments = ({ review_id }) => {
     err,
   } = useApiCall(() => getCommentsByReviewId(review_id), [review_id], []);
 
-  // Todo: pass setNPC to postcomment, write API call, update comment by optimistic rendering
   const [newlyPostedComment, setNewlyPostedComment] = useState(null);
 
   const noCommentFound = !newlyPostedComment && comments.length === 0;
 
   return (
     <ApiLoading isLoading={isLoading} err={err}>
-      <div>
+      <div className="comments-wrapper">
         <h2>Comments: </h2>
         {noCommentFound && (
           <p>No comments for this review yet. Maybe you can post one?</p>

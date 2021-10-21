@@ -174,3 +174,27 @@ div.msgbox p {
     max-width: 50vw;
   }
 }
+
+.text-input {
+  background-color: var(--translucent-shadow);
+  color: var(--foreground);
+  padding: 0.5em 0.6em;
+
+  border: 0.5px solid var(--light-shadow);
+  border-radius: 4px;
+  transition: box-shadow 0.1s ease;
+}
+
+.text-input::placeholder {
+  color: var(--shadow);
+}
+
+.text-input:focus {
+  outline: 2px solid var(--primary);
+}
+
+.input-comment {
+  display: block;
+  margin: 1em 0;
+  width: 100%;
+}

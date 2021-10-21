@@ -10,13 +10,13 @@ const SingleComment = ({ comment }) => {
 
   const { comment_id, author, votes, created_at, body } = comment;
   return (
-    <div>
-      <p>author: {author}</p>
-      <Voter votes={votes} patchVotes={patchVotes} />
+    <div className="comment">
       <p>
-        created_at: <DisplayDatetime value={created_at} />
+        posted by: <span className="info">{author}</span>,{" "}
+        <DisplayDatetime value={created_at} />
       </p>
-      <p>body: {body}</p>
+      <p className="comment-body">{body}</p>
+      <Voter votes={votes} patchVotes={patchVotes} />
     </div>
   );
 };

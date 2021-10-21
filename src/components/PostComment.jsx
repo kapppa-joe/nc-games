@@ -24,20 +24,29 @@ const PostComment = ({ setNewlyPostedComment, postNewComment, review_id }) => {
   };
 
   if (!user) {
-    return <div id="prompt-login">Login or sign up to leave your comment</div>;
+    return (
+      <div class="msgbox" id="prompt-login">
+        Login or sign up to leave your comment
+      </div>
+    );
   } else {
     return (
       <form onSubmit={handleSubmit}>
-        <input
-          type="textarea"
+        <textarea
+          className="text-input input-comment"
           name="comment body"
           value={commentBody}
           onChange={(e) => setCommentBody(e.target.value)}
           placeholder="leave your comments"
           minLength="20"
+          rows="3"
           required
         />
-        <button type="reset" className="button">
+        <button
+          type="reset"
+          className="button"
+          onClick={() => setCommentBody("")}
+        >
           Discard
         </button>
         <button type="submit" className="button">
