@@ -1,82 +1,65 @@
 # NC-BoardGamers
 
-## Credit:
+A discussion website for people to talk about their favourite board games. Built with React.
+
+A running version is hosted here: (... to be filled in later)
+
+Backend of this website: [github](https://github.com/kapppa-joe/backend-project-nc-games) | [hosted](https://nc-board-gamers.herokuapp.com/api/)
+
+## Description
+
+Built as a frontcase project during #Northcoders course.
+
+Some features of this website:
+
+- Mobile first, responsive design
+- Retreive reviews / comments from backend api and display to user
+- Pagination display
+- Optimistic rendering of votes and newly posted comment
+
+  post reviews for their favourite board games
+  comments on each other's reviews
+  vote up or vote down any review or comment
+
+## Installation
+
+Before install, ensure you have got Node.js in your local machine.
+[Node JS](https://nodejs.org/)
+
+Then, clone the repo and install the dependencies to your local machine by running the following commands in terminal:
+
+```
+git clone `https://github.com/kapppa-joe/nc-games.git`
+cd nc-games
+npm install
+```
+
+When installation is complete, run the following commands to start up a server in localhost.
+
+```
+npm start
+```
+
+It will automatically load the website to your default browser, or you can manually access it by visiting `localhost:3000`.
+
+You can type Ctrl+C in the terminal to shut down the server.
+
+Hope you enjoy this little website!
+
+## Credits:
+
+CSS of responsive grid borrowed from:
+https://purecss.io/
 
 Awesome loading spinner from:
-https://loading.io/spinner/bars/-bounce-bar-column-chart-equalizer-histogram-rectangle-block-progress-facebook
+https://loading.io/
 
-Elegant <select> styling from:
+An elegant `<select>` styling from:
 https://codepen.io/avstorm/pen/bPOgRO
 
-<!-- below: default readme to remove later -->
+Some nice icons borrowed from:
+https://icomoon.io/
+https://tablericons.com/
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+My <del>(rather poorly)</del> hand-drawn site-logo, made with:
+https://excalidraw.com/
