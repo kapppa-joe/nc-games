@@ -16,12 +16,16 @@ const PostComment = ({ setNewlyPostedComment, postNewComment, review_id }) => {
       votes: 0,
       created_at: new Date().toISOString(),
     });
-    setCommentBody("");
-    postNewComment(review_id, user.username, commentBody).catch((err) => {
-      console.dir(err);
-      setNewlyPostedComment(null);
-      // tell user some error happened
-    });
+
+    postNewComment(review_id, user.username, commentBody)
+      .then(() => {
+        setCommentBody("");
+      })
+      .catch((err) => {
+        console.dir(err);
+        setNewlyPostedComment(null);
+        // tell user some error happened
+      });
   };
 
   if (!user) {

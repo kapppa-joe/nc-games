@@ -7,11 +7,15 @@ import "../styles/Reviews.css";
 import { patchReviewVotes } from "../utils/api";
 import Voter from "./Voter";
 
-const LinkWrapper = ({ review_id, children }) => {
-  return <Link to={`/reviews/${review_id}`}>{children}</Link>;
+const LinkWrapper = ({ review_id, children, className }) => {
+  return (
+    <Link className={className ? className : ""} to={`/reviews/${review_id}`}>
+      {children}
+    </Link>
+  );
 };
 
-const ReviewContent = ({ review, isSingleReview }) => {
+const ReviewContent = ({ review, isSingleReview, className }) => {
   const {
     review_id,
     review_img_url,
@@ -29,7 +33,7 @@ const ReviewContent = ({ review, isSingleReview }) => {
   };
 
   return (
-    <article className={`review pure-g`}>
+    <article className={`review pure-g ${className ? className : ""}`}>
       <div className="image-wrapper pure-u-1 pure-u-md-1-3">
         <img clasName="review_img" src={review_img_url} alt={title} />
       </div>
@@ -62,15 +66,21 @@ const ReviewContent = ({ review, isSingleReview }) => {
   );
 };
 
-const Review = ({ review, generateLink, isSingleReview }) => {
+const Review = ({ review, generateLink, isSingleReview, className }) => {
   if (generateLink) {
     return (
-      <LinkWrapper review_id={review.review_id}>
+      <LinkWrapper review_id={review.review_id} className={className}>
         <ReviewContent review={review} isSingleReview={isSingleReview} />
       </LinkWrapper>
     );
   } else {
-    return <ReviewContent review={review} isSingleReview={isSingleReview} />;
+    return (
+      <ReviewContent
+        review={review}
+        isSingleReview={isSingleReview}
+        className={className}
+      />
+    );
   }
 };
 

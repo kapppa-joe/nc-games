@@ -48,3 +48,19 @@ export function postNewComment(review_id, username, comment_body) {
 export function getUserByUsername(username) {
   return api.get(`/users/${username}`).then((res) => res.data.user);
 }
+
+export function getFeaturedReviews(username) {
+  return api.get(`/reviews?limit=100&sort_by=created_at`).then((res) => {
+    const allReviews = res.data.reviews;
+    const newestReview = allReviews[0];
+    const reviewOfTheMonth = allReviews[new Date().getMonth()];
+    const myReview = username
+      ? allReviews.find(
+          (review) =>
+            review.owner === username &&
+            review.review_id !== reviewOfTheMonth.review_id
+        )
+      : null;
+    return { newestReview, reviewOfTheMonth, myReview };
+  });
+}
