@@ -2,29 +2,27 @@
 
 A discussion website for people to talk about their favourite board games. Built with React.
 
-A running version is hosted here: (... to be filled in later)
+A running version is hosted here: [NC-BoardGamers](https://nc-boardgamers.netlify.app/)
 
 Backend of this website: [github](https://github.com/kapppa-joe/backend-project-nc-games) | [hosted](https://nc-board-gamers.herokuapp.com/api/)
 
 ## Description
 
-Built as a frontcase project during #Northcoders course.
+Built as a front end project during #Northcoders course with the [React framework](https://reactjs.org/).
 
 Some features of this website:
 
-- Mobile first, responsive design
+- A mobile first, responsive design
 - Retreive reviews / comments from backend api and display to user
 - Pagination display
 - Optimistic rendering of votes and newly posted comment
 
-  post reviews for their favourite board games
-  comments on each other's reviews
-  vote up or vote down any review or comment
-
 ## Installation
 
-Before install, ensure you have got Node.js in your local machine.
+You can build a dev version of this website by following some easy steps.
+Before install, ensure you have got Node.js and Git in your local machine.
 [Node JS](https://nodejs.org/)
+[Git](https://git-scm.com/)
 
 Then, clone the repo and install the dependencies to your local machine by running the following commands in terminal:
 
