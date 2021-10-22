@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 import Review from "../components/Review";
+import ApiLoading from "../components/ApiLoading";
 
 import useUser from "../hooks/useUser";
+import useApiCall from "../hooks/useApiCall";
 
 import { getFeaturedReviews } from "../utils/api";
 import "../styles/Home.css";
@@ -25,13 +27,12 @@ const displayFeaturedReview = (title, review) => {
 
 const Home = () => {
   const { user } = useUser();
-  const [featuredReviews, setFeaturedReviews] = useState({});
 
-  useEffect(() => {
-    getFeaturedReviews(user ? user.username : "").then((reviews) => {
-      setFeaturedReviews(reviews);
-    });
-  }, []);
+  const {
+    data: featuredReviews,
+    err,
+    isLoading,
+  } = useApiCall(() => getFeaturedReviews(user ? user.username : ""), [], []);
 
   return (
     <section id="home">
@@ -41,32 +42,19 @@ const Home = () => {
         <br />
         Let's talk about your beloved board games!
       </div>
+
       <div id="featured-reviews-wrapper" className="pure-g reviews-container">
-        {displayFeaturedReview(
-          `Featured Review of ${moment().format("MMM")}`,
-          featuredReviews.reviewOfTheMonth
-        )}
-        {displayFeaturedReview(
-          `Featured Review From You`,
-          featuredReviews.myReview
-        )}
-        {displayFeaturedReview(`Newest review`, featuredReviews.newestReview)}
-        {/* {
-        displayFeaturedReview(`Featured Review of ${moment().format("MMM")}`)
-        
-        }
-        {featuredReviews.reviewOfTheMonth && (
-          <>
-            <h3 className="pure-u-1 pure-u-md-1-3">
-              Featured Review of {moment().format("MMM")}:
-            </h3>
-            <Review
-              className="pure-u-1 pure-u-md-2-3"
-              review={featuredReviews.reviewOfTheMonth}
-              generateLink={true}
-            />
-          </>
-        )} */}
+        <ApiLoading isLoading={isLoading} err={err}>
+          {displayFeaturedReview(
+            `Featured Review of ${moment().format("MMM")}`,
+            featuredReviews.reviewOfTheMonth
+          )}
+          {displayFeaturedReview(
+            `Featured Review From You`,
+            featuredReviews.myReview
+          )}
+          {displayFeaturedReview(`Newest review`, featuredReviews.newestReview)}
+        </ApiLoading>
       </div>
     </section>
   );
