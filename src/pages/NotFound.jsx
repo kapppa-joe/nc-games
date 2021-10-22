@@ -6,12 +6,12 @@ const NotFound = () => {
   const history = useHistory();
   useEffect(() => {
     setTimeout(() => {
-      // history.push("/");
+      history.push("/");
     }, 5000);
   }, []);
 
   return (
-    <section id="not-found">
+    <section id="not-found" style={{ paddingTop: "4em" }}>
       <div className="msgbox">
         <h1 className="primary">404</h1>
         <h3>Ooops. The page you want seem to be not existing (yet) :(</h3>
