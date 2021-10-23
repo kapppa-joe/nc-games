@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Highlighter from "react-highlight-words";
 
 import DisplayDatetime from "./DisplayDatetime";
-
-import "../styles/Reviews.css";
-import { patchReviewVotes } from "../utils/api";
 import Voter from "./Voter";
+
+import { patchReviewVotes } from "../utils/api";
+import "../styles/Reviews.css";
 
 const LinkWrapper = ({ review_id, children, className }) => {
   return (
@@ -15,7 +16,33 @@ const LinkWrapper = ({ review_id, children, className }) => {
   );
 };
 
-const ReviewContent = ({ review, isSingleReview, className }) => {
+const HighlightSearchTerm = ({ text, searchTerm, excerpt = false }) => {
+  if (!searchTerm) {
+    return text;
+  }
+  const searchWords = searchTerm.split(/\s/);
+
+  if (excerpt) {
+    const firstMatchIndex = text.search(new RegExp(searchWords[0], "i"));
+    if (firstMatchIndex >= 0) {
+      const startExcerpt = Math.max(firstMatchIndex - 40, 0);
+      text = text.slice(startExcerpt, startExcerpt + 100);
+      if (startExcerpt > 0) {
+        text = "..." + text;
+      }
+    }
+  }
+  return (
+    <Highlighter
+      highlightClassName="highlight-text"
+      searchWords={searchWords}
+      autoEscape={true}
+      textToHighlight={text}
+    />
+  );
+};
+
+const ReviewContent = ({ review, isSingleReview, className, searchTerm }) => {
   const {
     review_id,
     review_img_url,
@@ -38,14 +65,19 @@ const ReviewContent = ({ review, isSingleReview, className }) => {
         <img clasName="review_img" src={review_img_url} alt={title} />
       </div>
       <div className="title-wrapper pure-u-1">
-        <h3 className="review-title">{title}</h3>
+        <h3 className="review-title">
+          <HighlightSearchTerm text={title} searchTerm={searchTerm} />
+        </h3>
       </div>
       <div className="review-details pure-u-1 pure-u-md-2-3">
         <p>
           posted by <span className="info">{owner}</span>
         </p>
         <p>
-          category: <span className="info">{category}</span>
+          category:{" "}
+          <span className="info">
+            <HighlightSearchTerm text={category} searchTerm={searchTerm} />
+          </span>
         </p>
         <p>
           {isSingleReview ? (
@@ -60,17 +92,35 @@ const ReviewContent = ({ review, isSingleReview, className }) => {
         <p>
           <DisplayDatetime value={created_at} />
         </p>
-        {review_body && <p className="review-body">{review_body}</p>}
+        {review_body && (
+          <p className="review-body">
+            <HighlightSearchTerm
+              text={review_body}
+              searchTerm={searchTerm}
+              excerpt={true}
+            />
+          </p>
+        )}
       </div>
     </article>
   );
 };
 
-const Review = ({ review, generateLink, isSingleReview, className }) => {
+const Review = ({
+  review,
+  generateLink,
+  isSingleReview,
+  className,
+  searchTerm,
+}) => {
   if (generateLink) {
     return (
       <LinkWrapper review_id={review.review_id} className={className}>
-        <ReviewContent review={review} isSingleReview={isSingleReview} />
+        <ReviewContent
+          review={review}
+          isSingleReview={isSingleReview}
+          searchTerm={searchTerm}
+        />
       </LinkWrapper>
     );
   } else {
@@ -79,6 +129,7 @@ const Review = ({ review, generateLink, isSingleReview, className }) => {
         review={review}
         isSingleReview={isSingleReview}
         className={className}
+        searchTerm={searchTerm}
       />
     );
   }

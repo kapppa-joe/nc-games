@@ -41,6 +41,9 @@ const ListReviews = () => {
     describeResults += `, showing page ${page} of ${maxPage}`;
   }
 
+  const searchTerm = query && query.get("search");
+  console.log(searchTerm, "<---- search term entered");
+
   useEffect(() => {
     const newQueryStr = setSortOptionToQueryStr(query, sortOptionSelected);
     setPage(1); // reset to page 1 when change sort method.
@@ -80,6 +83,7 @@ const ListReviews = () => {
                   key={review.review_id}
                   review={review}
                   generateLink={true}
+                  searchTerm={searchTerm}
                 />
               );
             })}
