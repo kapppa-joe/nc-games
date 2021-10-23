@@ -10,7 +10,6 @@ const Voter = ({ votes, patchVotes }) => {
   const handleVote = (inc_votes) => {
     setVoteChange((currVote) => currVote + inc_votes);
     patchVotes(inc_votes).catch((err) => {
-      console.log(err);
       setVoteChange((currVote) => currVote - inc_votes);
     });
   };

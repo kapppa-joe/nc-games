@@ -14,7 +14,6 @@ const useApiCall = (apiCall, dependency = [], initValue = null) => {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.dir(err);
         if (err.response.status === 404) {
           setErr({
             status: 404,
@@ -36,7 +35,6 @@ const useApiCall = (apiCall, dependency = [], initValue = null) => {
         setIsLoading(false);
       });
   }, [...dependency]);
-  // console.log(data, "<--- data from api call");
   return { data, err, isLoading };
 };
 

@@ -42,7 +42,6 @@ const ListReviews = () => {
   }
 
   const searchTerm = query && query.get("search");
-  console.log(searchTerm, "<---- search term entered");
 
   useEffect(() => {
     const newQueryStr = setSortOptionToQueryStr(query, sortOptionSelected);

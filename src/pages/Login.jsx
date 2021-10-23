@@ -14,7 +14,6 @@ const Login = () => {
     setErr(null);
     login(usernameValue)
       .then(() => {
-        console.log("logged in successfuly. redirecting user soon.");
         setTimeout(() => {
           history.push("/");
         }, 2000);

@@ -22,9 +22,8 @@ const PostComment = ({ setNewlyPostedComment, postNewComment, review_id }) => {
         setCommentBody("");
       })
       .catch((err) => {
-        console.dir(err);
         setNewlyPostedComment(null);
-        // tell user some error happened
+        // todo: tell user some error happened
       });
   };
 

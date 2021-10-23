@@ -11,10 +11,9 @@ const UserPage = () => {
           You are now logged in as: <b>{user.username}</b>
         </p>
         <p>Name: {user.name}</p>
-        {console.log(user)}
         <img
           class="pure-img avatar_img"
-          alt="user avatar image"
+          alt="user avatar"
           src={user.avatar_url}
           style={{
             margin: "auto",
