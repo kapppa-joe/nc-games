@@ -55,7 +55,6 @@
   background-color: var(--translucent-shadow);
   border: 0.5px solid var(--light-shadow);
   border-radius: 4px;
-  color: var(--background);
   stroke: var(--light-shadow);
   transition: box-shadow 0.1s ease;
 }
@@ -68,6 +67,7 @@
 
 #search-term {
   background-color: transparent;
+  color: var(--background);
   width: 100%;
   padding: 0.5em 0.6em;
   border: none;
