@@ -19,6 +19,15 @@
   color: var(--background);
 }
 
+@media only screen and (min-width: 48em) {
+  #search-bar {
+    display: grid;
+    grid-template-columns: 14em 1fr 8em;
+    grid-template-areas: "logo search-form user";
+    gap: 0;
+  }
+}
+
 #search-bar > * {
   flex-shrink: 1;
 }
@@ -31,25 +40,60 @@
   --logo-svg-colour: #f0f0f0;
 }
 
-#search-term {
-  background-color: var(--translucent-shadow);
-  width: 100%;
-  padding: 0.5em 0.6em;
+#search-bar .site-logo {
+  grid-area: logo;
+}
 
+#search-form {
+  grid-area: search-form;
+  text-align: left;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--translucent-shadow);
   border: 0.5px solid var(--light-shadow);
   border-radius: 4px;
   color: var(--background);
+  stroke: var(--light-shadow);
   transition: box-shadow 0.1s ease;
+}
+
+#search-form svg {
+  height: 1.5em;
+  padding: 0.5em;
+  transition: transform 0.3s ease;
+}
+
+#search-term {
+  background-color: transparent;
+  width: 100%;
+  padding: 0.5em 0.6em;
+  border: none;
+  outline: none;
 }
 
 #search-term::placeholder {
   color: var(--background);
 }
 
-#search-term:focus,
-#search-term:hover {
+#search-form:focus-within,
+#search-form:hover {
   outline: 1px double var(--background);
   box-shadow: inset 0 1px 2px var(--highlight), 0px 0px 3px 2px var(--highlight);
+}
+
+#search-form:focus-within svg,
+#search-form:hover svg {
+  stroke: var(--background);
+  transform: rotateY(180deg);
+}
+
+#search-bar .user-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  /* padding-right: 2em; */
 }
 
 .user-button svg {
@@ -83,14 +127,4 @@ a:focus .user-button svg {
   background-color: var(--background);
   color: var(--primary);
   outline: 3px double var(--light-shadow);
-}
-
-@media only screen and (min-width: 48em) {
-  #search-bar {
-    justify-content: space-between;
-    padding: 0 2em;
-  }
-  #search-bar #search-term {
-    max-width: 60vw;
-  }
 }
