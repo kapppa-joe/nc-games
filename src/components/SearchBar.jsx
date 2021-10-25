@@ -21,7 +21,7 @@ const SearchBar = () => {
   const { user } = useUser();
 
   return (
-    <nav id="search-bar">
+    <nav id="search-bar" aria-label="search-bar">
       <Link
         className="site-logo"
         to="/"
@@ -30,7 +30,7 @@ const SearchBar = () => {
       >
         <SiteLogo />
       </Link>
-      <form id="search-form" role="search" onSubmit={handleSubmit}>
+      <form id="search-form" onSubmit={handleSubmit} role="search">
         <SearchIcon />
         <input
           type="text"
@@ -45,7 +45,7 @@ const SearchBar = () => {
       <span className="user-button-wrapper">
         {user ? (
           <Link to="/user" tabIndex="0">
-            <span className="user-button" aria-label="user-page">
+            <span className="user-button" aria-label="user-page" role="button">
               <UserIcon />
             </span>
           </Link>

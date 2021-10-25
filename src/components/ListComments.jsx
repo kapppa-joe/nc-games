@@ -8,6 +8,7 @@ import PostComment from "./PostComment";
 import SingleComment from "./SingleComment";
 
 import "../styles/Comments.css";
+import useUser from "../hooks/useUser";
 
 const ListComments = ({ review_id }) => {
   const {
@@ -17,6 +18,8 @@ const ListComments = ({ review_id }) => {
   } = useApiCall(() => getCommentsByReviewId(review_id), [review_id], []);
 
   const [newlyPostedComment, setNewlyPostedComment] = useState(null);
+
+  const { user } = useUser();
 
   const noCommentFound = !newlyPostedComment && comments.length === 0;
 
@@ -30,7 +33,7 @@ const ListComments = ({ review_id }) => {
         {newlyPostedComment ? (
           <>
             <p>Thank you for posting you comment!</p>
-            <SingleComment comment={newlyPostedComment} />
+            <SingleComment comment={newlyPostedComment} disableVote={true} />
           </>
         ) : (
           <PostComment
@@ -40,7 +43,13 @@ const ListComments = ({ review_id }) => {
           />
         )}
         {comments.map((comment) => {
-          return <SingleComment key={comment.comment_id} comment={comment} />;
+          return (
+            <SingleComment
+              key={comment.comment_id}
+              comment={comment}
+              disableVote={user.username === comment.author}
+            />
+          );
         })}
       </div>
     </ApiLoading>

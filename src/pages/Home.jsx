@@ -37,9 +37,10 @@ const Home = () => {
   return (
     <section id="home">
       <div className="greeting">
-        Hello, {user ? user.name.replace(/\s.+/, "") : `my friend`}! Welcome to
-        NC Boardgamer.
-        <br />
+        <h1>
+          Hello, {user ? user.name.replace(/\s.+/, "") : `my friend`}! Welcome
+          to NC Boardgamer.
+        </h1>
         Let's talk about your beloved board games!
       </div>
 

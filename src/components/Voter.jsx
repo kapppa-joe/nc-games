@@ -5,7 +5,7 @@ import { ReactComponent as ArrowDown } from "../assets/svg/arrow-down.svg";
 
 import "../styles/Voter.css";
 
-const Voter = ({ votes, patchVotes }) => {
+const Voter = ({ votes, patchVotes, disableVote }) => {
   const [voteChange, setVoteChange] = useState(0);
   const handleVote = (inc_votes) => {
     setVoteChange((currVote) => currVote + inc_votes);
@@ -20,7 +20,7 @@ const Voter = ({ votes, patchVotes }) => {
         className="button vote-button"
         aria-label="vote-up"
         onClick={() => handleVote(+1)}
-        disabled={voteChange === 1}
+        disabled={voteChange === 1 || disableVote}
       >
         <ArrowUp />
       </button>
@@ -29,7 +29,7 @@ const Voter = ({ votes, patchVotes }) => {
         className="button vote-button"
         aria-label="vote-down"
         onClick={() => handleVote(-1)}
-        disabled={voteChange === -1}
+        disabled={voteChange === -1 || disableVote}
       >
         <ArrowDown />
       </button>

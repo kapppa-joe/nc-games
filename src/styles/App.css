@@ -20,10 +20,11 @@ body {
   --container-background: #fff;
   --primary: #597eff;
   --primary-dark: #005ada;
-  --shadow: #777;
+  --shadow: #737373;
   --light-shadow: #ccc;
   --highlight: #ccccff66;
   --translucent-shadow: #00000015;
+  --translucent-shadow-dark: #00000030;
   --primary-translucent-shadow: #597eff40;
 
   --error: #f01438;
@@ -52,6 +53,12 @@ body {
 .App > nav {
   flex-grow: 0;
   flex-basis: 3em;
+}
+
+.App h1 {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
 #main > section {

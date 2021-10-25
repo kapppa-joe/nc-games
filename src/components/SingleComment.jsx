@@ -3,7 +3,7 @@ import { patchCommentVotes } from "../utils/api";
 import DisplayDatetime from "./DisplayDatetime";
 import Voter from "./Voter";
 
-const SingleComment = ({ comment }) => {
+const SingleComment = ({ comment, disableVote }) => {
   const patchVotes = (inc_votes) => {
     return patchCommentVotes(comment_id, inc_votes);
   };
@@ -16,7 +16,7 @@ const SingleComment = ({ comment }) => {
         <DisplayDatetime value={created_at} />
       </p>
       <p className="comment-body">{body}</p>
-      <Voter votes={votes} patchVotes={patchVotes} />
+      <Voter votes={votes} patchVotes={patchVotes} disableVote={disableVote} />
     </div>
   );
 };

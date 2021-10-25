@@ -5,6 +5,7 @@ import Highlighter from "react-highlight-words";
 import DisplayDatetime from "./DisplayDatetime";
 import Voter from "./Voter";
 
+import useUser from "../hooks/useUser";
 import { patchReviewVotes } from "../utils/api";
 import "../styles/Reviews.css";
 
@@ -55,6 +56,8 @@ const ReviewContent = ({ review, isSingleReview, className, searchTerm }) => {
     review_body,
   } = review;
 
+  const { user } = useUser();
+
   const patchVotes = (inc_votes) => {
     return patchReviewVotes(review_id, inc_votes);
   };
@@ -81,7 +84,11 @@ const ReviewContent = ({ review, isSingleReview, className, searchTerm }) => {
         </p>
         <p>
           {isSingleReview ? (
-            <Voter votes={votes} patchVotes={patchVotes} />
+            <Voter
+              votes={votes}
+              patchVotes={patchVotes}
+              disableVote={user && user.username === owner}
+            />
           ) : (
             <>
               <span className="info">{votes}</span> votes,

@@ -9,6 +9,7 @@ const SortBar = ({ sortOptionSelected, setSortOptionSelected }) => {
       <span className="select">
         <label for="sort-bar">Sort by: </label>
         <select
+          id="sort-bar"
           className="sort-bar"
           value={sortOptionSelected}
           onChange={(e) => setSortOptionSelected(e.target.value)}

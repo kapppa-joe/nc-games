@@ -52,7 +52,7 @@
   display: flex;
   align-items: center;
 
-  background-color: var(--translucent-shadow);
+  background-color: var(--translucent-shadow-dark);
   border: 0.5px solid var(--light-shadow);
   border-radius: 4px;
   stroke: var(--light-shadow);
@@ -76,6 +76,7 @@
 
 #search-term::placeholder {
   color: var(--background);
+  opacity: 0.8;
 }
 
 #search-form:focus-within,

@@ -16,7 +16,7 @@ import Random from "./pages/Random";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" role="main">
       <SearchBar />
       <Nav />
       <Main>
